@@ -1,0 +1,28 @@
+
+#plantTable {
+    display: block;
+    width: 100%;
+}
+
+thead, tbody, tr {
+    table-layout:fixed;
+    display: table;
+    width: 100%;
+}
+
+td, th{
+    text-align: center;
+    width: calc(100% / 5);
+}
+
+#plantTable, tr {
+    line-height: 40px;
+}
+
+#plantTable > tbody {
+    overflow-y: scroll;
+    height: 200px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}

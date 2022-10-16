@@ -1,0 +1,33 @@
+
+<tr>
+    <td>{{plant.name}}</td>
+    <td>{{plant.species}}</td>
+    <td>
+        <ul style="list-style-type: none">
+            <li>Optimal: {{plant.best_light}}</li>
+            <li>Margin: {{plant.light_margin}}</li>
+        </ul>
+    </td>
+    <td>
+        <ul style="list-style-type: none">
+            <li>Optimal: {{plant.best_air_humidity}}</li>
+            <li>Margin: {{plant.air_humidity_margin}}</li>
+        </ul>
+    </td>
+    <td>
+        <ul style="list-style-type: none">
+            <li>Optimal: {{plant.best_soil_moisture}}</li>
+            <li>Margin: {{plant.soil_moisture_margin}}</li>
+        </ul>
+    </td>
+    <td>
+        <ul style="list-style-type: none">
+            <li>Optimal: {{plant.best_temperature}}</li>
+            <li>Margin: {{plant.temperature_margin}}</li>
+        </ul>
+    </td>
+    <td>
+    <a class="btn btn-danger" href="{%url 'web:delete_plant' plant.id%}" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+    <a class="btn btn-danger" href="{%url 'web:plant_view' plant.id%}">Edit</a>
+</td>  
+</tr>

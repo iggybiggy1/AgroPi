@@ -1,0 +1,137 @@
+/* index */
+.bg {
+    background-image: url("./images/background.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#nav-index {
+    backdrop-filter: blur(5px);
+}
+
+#nav-index a {
+    color: black;
+    font-size: large;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #000 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #000 !important;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #000 !important;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #000 !important;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color:    #000 !important;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    #000 !important;
+}
+
+/* Form */
+#form-auth {
+    max-width: 350px;
+    /* border: solid 2px; */
+    /* border-color: gray; */
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+}
+
+#form-auth input {
+    border-radius: 0px;
+    border: 0;
+    border-bottom: 1px solid black;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    text-align: center;
+}
+
+/* #username, #password {
+    border: 0;
+    border-bottom: 1px solid black;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    text-align: center;
+} */
+
+/* dashboard */
+#graph-container {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#graph-container .row .col-lg {
+    margin: 5px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* navigation */
+#top-navbar {
+    padding: 10px;
+}
+
+/* rows */
+.mt-10 {
+    margin-top: 10px !important;
+}
+  
+#about-text {
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, .75);
+    backdrop-filter: blur(5px);
+}
+
+/* edit plant */
+#edit-plant-container {
+    /* margin: 0 auto;
+    padding: 10px; */
+}
+
+#plant-add {
+    margin: 0 auto;
+    margin-top: 2%;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.button {
+    font: bold 11px Arial;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+.row {
+    transition: 0.5s;
+}
+
+.col-lg {
+    transition: 0.5s;
+}

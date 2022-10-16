@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'web/style.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Plant | {{plant.name}}</title>
+</head>
+
+<body>
+    <!-- form -->
+    <div class="container-fluid" id="edit-plant-container">
+
+        <!-- navbar -->
+        <div class="row">
+            <nav class="navbar navbar-dark bg-dark nav-fill w-100" id="top-navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <span class="navbar-brand">Profile</span>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        {% if adminrights %}
+                        <a class="btn btn-primary pull-right" name="to-admin" href="{% url 'web:admin' %}">to admin</a>
+                        {% endif %}
+                        {% if plantId is not None %}
+                        <a class="btn btn-primary" name="Dashboardplant"
+                            href="{% url 'web:dashboard' plantId %}">Dashboard</a>
+                        {% else %}
+                        <a class="btn btn-primary" name="Dashboard" href="{% url 'web:dashboard' %}">Dashboard</a>
+                        {% endif %}
+                        <a class="btn btn-primary" name="Logout" href="{% url 'web:logout_view' %}">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <form class="form-group bg-dark text-light" id="plant-add" action="{% url 'web:plant_view' plant.id %}"
+            method="post">
+            {% csrf_token %}
+            {{form.user}}
+            <div class="container-fluid form-group">
+                <div class="row">
+                    <div class="col-5">Name:</div>
+                    <div class="col">{{form.name}}</div>
+                </div>
+                <div class="row mt-10">
+                    <div class="col-5">Species:</div>
+                    <div class="col">{{form.species}}</div>
+                </div>
+                <div class="row mt-10">
+                    <div class="col-5">Optimal light intensity:</div>
+                    <div class="col">{{form.best_light}}</div>
+                </div>
+                <div class="row mt-10">
+                    <div class="col-5">Light intensity margin:</div>
+                    <div class="col">{{form.light_margin}}</div>
+                </div>
+                <div class="row mt-10">
+                    <div class="col-5">Optimal air humidity:</div>
+                    <div class="col">{{form.best_air_humidity}}</div>
+                </div>
+                <div class="row mt-10">
+                    <div class="col-5">Air humidity margin:</div>
+                    <div class="col">{{form.air_humidity_margin}}</div>
+                </div>
+                <div class="row mt-10">
+                    <div class="col-5">Optimal soil moisture:</div>
+                    <div class="col">{{form.best_soil_moisture}}</div>
+                </div>
+                <div class="row mt-10">
+                    <div class="col-5">Soil moisture margin:</div>
+                    <div class="col">{{form.soil_moisture_margin}}</div>
+                </div>
+                <div class="row mt-10">
+                    <div class="col-5">Optimal temperature:</div>
+                    <div class="col">{{form.best_temperature}}</div>
+                </div>
+                <div class="row mt-10">
+                    <div class="col-5">Temperature margin:</div>
+                    <div class="col">{{form.temperature_margin}}</div>
+                </div>
+            </div>
+            <button id="addPlant" type="submit" class="btn btn-primary">Save</button>
+            <button onclick="window.history.back()" class="btn btn-primary">Go Back</button> 
+        </form>
+    </div>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
